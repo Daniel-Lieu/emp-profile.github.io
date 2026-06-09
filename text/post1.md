@@ -1,0 +1,19 @@
+## Post-Course Employability Profile
+
+### Completion of a Full-stack Web Application
+
+Before commencing studies, I had come to an agreement to work on a friend’s personal project, wherein they wanted a functional web application to be developed. This provided an opportunity for me to work with a real-world scenario of working on a project with relatively high independence. I co-developed the application with another friend and was able to work on my collaboration skills throughout the development process.
+
+As an overview, I took on the task of co-developing a full-stack web application from scratch, requiring the design and development of frontend user experiences and the supporting backend architecture. I frequently discussed specific details with the client and my co-developer to ensure that the client’s desires were met at various stages of the project.
+
+While this project was essentially an agreement between friends, we established a basic signed contract to ensure that any conflicts during the development of the project did not necessarily encroach on our friendship, as well as helping as a means to gather and record the project’s initial requirements. While future projects I work on may not necessarily proceed exactly the same, this provided an initial experience to work from, helping to inform my personal involvement and understanding of the work I complete. I was generally successful in using this initial document to guide my independent progress throughout the project.
+
+Based on initial requirements as well as the comfort of my co-developer and me, we were able to decide on an acceptable stack of frontend and backend tech to utilise throughout the project. Certain parts of the tech stack would be difficult to change during later parts of the project, so performing an adequately comprehensive analysis of our options was necessary to ensure that long-term development would be made as easy as possible.
+
+During actual development, I was faced with systems which I had no prior experience or knowledge of, leading to the necessity of learning or relying on my co-developer for advice. I found that I picked up certain aspects of systems faster or slower than my co-developer, and we were able to establish an appropriate delegation of tasks based on our strengths and weaknesses after initial inspection of the systems required for various project requirements.
+
+As a result of the actions taken during the project period, I was able to successfully deliver a functional application to my friend, utilising my theoretical coding experience in a tangible, practical product. The project is something I am able to place on my resume and personal list of projects as a means of appealing to employers. I still have certain doubts regarding my ability to sustain a dedicated work ethic towards long-term projects, though it may be a skill which I can best develop just by completing additional projects.
+
+In terms of learnings from the project, I was able to gain an initial experience of working from nothing on a project. Similar university courses I have undertaken commonly begin with starter code to help streamline the development process for learning purposes. I was also given insight into the deployment process for web applications and the delivery of commercialised digitally-based services. It’s notable that a majority of systems require extensive tinkering and debugging to ensure that the experience of a user is as seamless as possible, while also ensuring that the code used during development is manageable long term, should clients request further work or assistance with the product.
+
+With this project in my portfolio, I can expect to utilise it as concrete proof of commercial-level coding abilities and have various experiences during the project’s development to draw from during interviews, which helps fill previously held insufficiencies in my resume and ability to approach questions.

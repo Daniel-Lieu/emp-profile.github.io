@@ -3,79 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markdown Profile Text Toggles</title>
-    <style>
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        margin: 2rem auto;
-        max-width: 700px;
-        line-height: 1.5;
-        padding: 0 1rem;
-      }
-
-      .toggle-item {
-        margin-bottom: 1rem;
-        border: 1px solid #d0d7de;
-        border-radius: 8px;
-      }
-
-      .toggle-item button {
-        width: 100%;
-        text-align: left;
-        background: #f6f8fa;
-        border: 0;
-        padding: 0.75rem 1rem;
-        font-size: 1rem;
-        cursor: pointer;
-      }
-
-      .content {
-        display: none;
-        padding: 1rem;
-      }
-
-      .content.show {
-        display: block;
-      }
-    </style>
+    <title>Employability Profile</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
-    <h1>Profile Notes</h1>
+    <button id="theme-toggle" class="theme-toggle" title="Light Mode">
+      <img src="assets/sun.png" alt="Light Mode" class="theme-icon">
+    </button>
+    <h1>Daniel Lieu, a website</h1>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Employability Profile</h2>
+        <button type="button" aria-expanded="false" aria-controls="item-1" data-target="item-1" data-file="/text/pre.md">
+          Pre-Course Employability Profile
+        </button>
+        <button type="button" aria-expanded="false" aria-controls="item-2" data-target="item-2" data-file="/text/act.md">
+          Activity Profile
+        </button>
+        <button type="button" aria-expanded="false" aria-controls="item-3" data-target="item-3" data-file="/text/post1.md">
+          Post-Course Employability Profile: Experience 1
+        </button>
+        <button type="button" aria-expanded="false" aria-controls="item-4" data-target="item-4" data-file="/text/post2.md">
+          Post-Course Employability Profile: Experience 2
+        </button>
+      </aside>
 
-    <section class="toggle-item">
-      <button type="button" aria-expanded="false" aria-controls="item-1" data-target="item-1">
-        Toggle Text 1
-      </button>
-      <div id="item-1" class="content">
-        <p><strong>About:</strong> This is the first markdown-style text instance.</p>
-      </div>
-    </section>
-
-    <section class="toggle-item">
-      <button type="button" aria-expanded="false" aria-controls="item-2" data-target="item-2">
-        Toggle Text 2
-      </button>
-      <div id="item-2" class="content">
-        <p><em>Skills:</em> This is the second markdown-style text instance.</p>
-      </div>
-    </section>
-
-    <section class="toggle-item">
-      <button type="button" aria-expanded="false" aria-controls="item-3" data-target="item-3">
-        Toggle Text 3
-      </button>
-      <div id="item-3" class="content">
-        <p><code>Contact:</code> This is the third markdown-style text instance.</p>
-      </div>
-    </section>
+      <main class="content-display">
+        <div id="item-1" class="content"></div>
+        <div id="item-2" class="content"></div>
+        <div id="item-3" class="content"></div>
+        <div id="item-4" class="content"></div>
+      </main>
+    </div>
 
     <script>
-      document.querySelectorAll("[data-target]").forEach((button) => {
-        button.addEventListener("click", () => {
-          const content = document.getElementById(button.dataset.target);
-          const isVisible = content.classList.toggle("show");
-          button.setAttribute("aria-expanded", String(isVisible));
+      const buttons = document.querySelectorAll("[data-target]");
+      const contents = document.querySelectorAll(".content");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const targetId = button.dataset.target;
+          const fileName = button.dataset.file;
+          const targetContent = document.getElementById(targetId);
+          
+          if (targetContent.classList.contains("show")) return;
+
+          // fetch content if not loaded
+          if (targetContent.innerHTML === "" && fileName) {
+            try {
+              const response = await fetch(fileName);
+              if (response.ok) {
+                const text = await response.text();
+                targetContent.innerHTML = marked.parse(text);
+              } else {
+                targetContent.innerText = "Error loading content.";
+              }
+            } catch (err) {
+              targetContent.innerText = "Failed to fetch file.";
+            }
+          }
+
+          // hide non-target content
+          contents.forEach(c => c.classList.remove("show"));
+          buttons.forEach(b => b.setAttribute("aria-expanded", "false"));
+
+          // show target content
+          targetContent.classList.add("show");
+          button.setAttribute("aria-expanded", "true");
         });
+      });
+
+      if (buttons.length > 0) {
+        buttons[0].click();
+      }
+
+      // theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = themeToggle.querySelector('.theme-icon');
+      const html = document.documentElement;
+
+      themeToggle.addEventListener('click', () => {
+        const isDark = !html.hasAttribute('data-theme') || html.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+          html.setAttribute('data-theme', 'light');
+          themeIcon.src = 'assets/moon.png';
+          themeIcon.alt = 'Dark Mode';
+          themeToggle.title = 'Dark Mode';
+        } else {
+          html.removeAttribute('data-theme');
+          themeIcon.src = 'assets/sun.png';
+          themeIcon.alt = 'Light Mode';
+          themeToggle.title = 'Light Mode';
+        }
       });
     </script>
   </body>

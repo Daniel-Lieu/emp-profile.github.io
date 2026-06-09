@@ -1,0 +1,15 @@
+## Post-Course Employability Profile
+
+### Participation in a “Work-Integrated Learning” Styled Course
+
+The other course which I had attended this semester was entirely based on the completion of a client-based project, similar to my completion of the full-stack application, though this project notably involved work with a larger group consisting of five members and the mock conditions of working with a supervising manager and client.
+
+Collaboration within the team and adherence to project methodologies were the focuses of the course. In contrast to my more personal project, a more professional style was required; proper processes, documentation, and scheduling were all made necessary by both course and client requirements, while under a rigorous pace demanded by the project deadlines.
+
+Continuous requirements gathering took place over the course of the project period. Due to the client’s schedule, this process was limited to meetings lasting up to thirty minutes once per week or via direct message stream with the client. Given these limitations, the possibility of miscommunication between the client and development team took place, even with submitted documentation and meetings between the involved parties. The client’s technical experience helped smooth out certain misunderstandings, though clear and correct information was necessary to ensure that our supervisor was able to remain informed of our progress.
+
+Due to the nature of working within a group of multiple people, proper management and delegation of responsibilities were necessary given the breadth and depth of roles within the project. Based on a methodology called Agile, we could ensure that the tasks we worked on were specific and limited to time-sensitive periods. Task delegation was self-appointed within Agile methodology, which helped to allow team members to work on tasks which align with their strengths, with certain tasks allowing for the development of skills which I had not dedicated myself to developing. At times, this caused development to slow down or stall, but I made sufficient effort to meet the project’s requirements while practising unfamiliar tasks.
+
+In the end, the product was developed and successfully delivered to the client as a prototype by the end of the project period, providing practice and a demonstration of the ability to successfully work in a team environment with structured processes and systems.
+
+Gaining experience within a team environment helped me manage my expectations towards working on projects within a team, working with project management tools, and the importance of closely following client requirements, more so than the sole task of working on code to minimise the risk of pursuing misdirected efforts. In future projects, I can refer to my involvement with this project to help advise my thought processes in dev teams I will work on in the future.
